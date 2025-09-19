@@ -1,9 +1,10 @@
 import React from "react";
+import ImageSlider from "../components/ImageSlider";
 
 const Home = () => {
   return (
-    <div className="p-4 text-center">
-      <h1 className="text-2xl font-bold">Welcome to MasterExch</h1>
+    <div className="text-center">
+      <ImageSlider />
       <p className="mt-2 text-gray-600">Sports, In-Play, Multi Market, Account</p>
     </div>
   );

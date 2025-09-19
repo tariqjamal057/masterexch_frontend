@@ -6,7 +6,7 @@ import MobileNavbar from "./MobileNavbar";
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
       <main className="flex-1"><Outlet /></main>
       <Footer />

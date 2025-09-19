@@ -4,8 +4,7 @@ import { TbCircleDotted } from "react-icons/tb";
 const MultiMarketPage = () => {
   return (
     <div
-      className="min-h-screen flex justify-center items-center font-sans"
-      style={{ background: "#f5f1e8" }}
+      className="h-full my-20 md:my-38 flex justify-center items-center font-sans"
     >
       <div className="bg-white border border-gray-300 rounded-md w-[90%] max-w-lg text-center p-5 text-[#607080] shadow-sm">
         <div className="flex justify-center mb-3">

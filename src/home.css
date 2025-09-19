@@ -1,0 +1,128 @@
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(-180deg, #243a48 20%, #172732 91%);
+  color: #fff;
+  z-index: 10;
+}
+
+nav .select {
+  background-image: linear-gradient(-180deg, #32617f 20%, #1f4258 91%);
+}
+
+nav .main-nav {
+  position: relative;
+}
+
+nav .main-nav:before {
+  content: "";
+  position: absolute;
+  top: -4.2666666667vw;
+  width: 100%;
+  height: 4.5333333333vw;
+  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient></defs><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" fill="url(%23a)" fill-rule="evenodd"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+nav .main-nav.select:before {
+  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" id="b"/></defs><g fill="none" fill-rule="evenodd"><use fill="url(%23a)" xlink:href="%23b"/><use fill-opacity=".8" fill="%23BEEBFA" style="mix-blend-mode:overlay" xlink:href="%23b"/></g></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+nav .main-nav a {
+  height: 17.6vw;
+  padding-top: 6.1333333333vw;
+  margin-top: -4.2666666667vw;
+}
+
+nav .main-nav .icon-sports {
+  width: 8.5333333333vw;
+  height: 6.9333333333vw;
+  margin: -2.1333333333vw auto 1.0666666667vw;
+}
+
+nav .main-nav .icon-home {
+  width: 8.5333333333vw;
+  height: 8vw;
+  margin: -2.1333333333vw auto 0vw;
+}
+
+nav a {
+  width: 20vw;
+  height: 13.3333333333vw;
+  color: #fff;
+  font-size: 3.2vw;
+  line-height: 1.1;
+  padding: 1.8666666667vw 2.6666666667vw 0;
+}
+
+nav img {
+  width: 5.3333333333vw;
+  height: 5.3333333333vw;
+  margin: 0 auto 0.5333333333vw;
+}
+
+nav .icon-home {
+  width: 6.6666666667vw;
+}
+
+nav .icon-sports {
+  width: 5.8666666667vw;
+  height: 5.3333333333vw;
+  margin: 0 auto 0.5333333333vw;
+}
+
+nav img,
+nav a,
+nav .main-nav:before {
+    display: block
+}
+
+
+
+nav .main-nav {
+  position: relative;
+}
+
+nav .main-nav:before {
+  content: "";
+  position: absolute;
+  top: -4.2666666667vw;
+  width: 100%;
+  height: 4.5333333333vw;
+  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient></defs><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" fill="url(%23a)" fill-rule="evenodd"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+nav .main-nav.select:before {
+  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" id="b"/></defs><g fill="none" fill-rule="evenodd"><use fill="url(%23a)" xlink:href="%23b"/><use fill-opacity=".8" fill="%23BEEBFA" style="mix-blend-mode:overlay" xlink:href="%23b"/></g></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+nav .main-nav a {
+  height: 17.6vw;
+  padding-top: 6.1333333333vw;
+  margin-top: -4.2666666667vw;
+}
+
+nav .main-nav .icon-sports {
+  width: 8.5333333333vw;
+  height: 6.9333333333vw;
+  margin: -2.1333333333vw auto 1.0666666667vw;
+}
+
+nav .main-nav .icon-home {
+  width: 8.5333333333vw;
+  height: 8vw;
+  margin: -2.1333333333vw auto 0vw;
+}

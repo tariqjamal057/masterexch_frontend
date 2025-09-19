@@ -1,79 +1,88 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { Home, PlayCircle, Grid, User } from "lucide-react";
 import { IoIosAlarm } from "react-icons/io";
 import { FaTrophy } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
 
 const MobileNavbar = () => {
+  const [navOption, setNavOption] = useState(2);
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-[#2e4b5e] text-white shadow-inner border-t border-gray-700 z-50 md:hidden">
-      <ul className="flex justify-around items-center py-2 relative">
-        <li className="absolute top-[-27px] left-6 w-18 h-18 rounded-full">
-          <a
-            onClick={() => handlePolicyClick("mini")}
-            className="w-full flex justify-center"
-          >
+    <nav>
+      <ul class="mini-lobby flex">
+        <li id="mini" class="main-nav">
+          <Link onclick="evolutionpop('DC','200215',true)" class="ui-link">
             <img
-              className="h-full w-full"
+              class="icon-promote"
               src="http://masterexch.vip/Content/images/mobile/minigame-promo/promot.gif"
-              alt="Mini Game Promotion"
+              alt="mini"
             />
-          </a>
+          </Link>
         </li>
-        <li className="w-13"></li>
-        <li>
-          <NavLink
-            exact
-            to="/"
-            activeClassName="text-yellow-400"
-            className="flex flex-col items-center text-xs"
-          >
-            <FaTrophy className="w-6 h-6 mb-1" />
+        <li
+          id="sports"
+          class={`${navOption === 0 ? "select" : ""} text-center`}
+          onClick={() => setNavOption(0)}
+        >
+          <Link to="/" class="ui-link">
+            <img
+              class="icon-sports"
+              src="http://masterexch.vip/Content/images/transparent.gif"
+            />
             Sports
-          </NavLink>
+          </Link>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="/inplay"
-            activeClassName="text-yellow-400"
-            className="flex flex-col items-center text-xs"
-          >
-            <IoIosAlarm className="w-6 h-6 mb-1" />
-            In-play
-          </NavLink>
+        <li
+          id="inPlay"
+          class={`${navOption === 1 ? "select" : ""} text-center`}
+          onClick={() => setNavOption(1)}
+        >
+          <Link to="/inplay" class="ui-link">
+            <img
+              class="icon-inplay"
+              src="http://masterexch.vip/Content/images/transparent.gif"
+            />
+            In-Play
+          </Link>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="/"
-            activeClassName="text-yellow-400"
-            className="flex flex-col items-center text-xs"
-          >
-            <TiHome className="w-6 h-6 mb-1" />
+        <li
+          id="home"
+          class={`${navOption === 2 ? "select" : ""} text-center`}
+          onClick={() => setNavOption(2)}
+        >
+          <Link to="/" class="ui-link">
+            <img
+              class="icon-home"
+              src="http://masterexch.vip/Content/images/transparent.gif"
+            />
             Home
-          </NavLink>
+          </Link>
         </li>
-        <li>
-          <NavLink
-            to="/multi"
-            activeClassName="text-yellow-400"
-            className="flex flex-col items-center text-xs"
-          >
-            <Grid className="w-6 h-6 mb-1" />
+        <li
+          id="multiMarket"
+          class={`${navOption === 3 ? "select" : ""} text-center`}
+          onClick={() => setNavOption(3)}
+        >
+          <Link to="/multi" class="ui-link">
+            <img
+              class="icon-pin"
+              src="http://masterexch.vip/Content/images/transparent.gif"
+            />
             Multi
-          </NavLink>
+          </Link>
         </li>
-        <li>
-          <NavLink
-            to="/login"
-            activeClassName="text-yellow-400"
-            className="flex flex-col items-center text-xs"
-          >
-            <User className="w-6 h-6 mb-1" />
-            Login
-          </NavLink>
+        <li
+          id="account"
+          class={`${navOption === 4 ? "select" : ""} text-center`}
+          onClick={() => setNavOption(4)}
+        >
+          <Link to="/" class="ui-link">
+            <img
+              class="icon-account"
+              src="http://masterexch.vip/Content/images/transparent.gif"
+            />
+            Account
+          </Link>
         </li>
       </ul>
     </nav>

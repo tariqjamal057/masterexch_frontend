@@ -12,14 +12,14 @@ function App() {
   return (
     <AppProvider>
       <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cricket" element={<CricketListing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/multi" element={<Multi />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="cricket" element={<CricketListing />} />
+            <Route path="multi" element={<Multi />} />
+          </Route>
+        </Routes>
       </Router>
     </AppProvider>
   );

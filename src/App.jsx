@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import CricketListing from "./pages/CricketListing";
 import Login from "./pages/Login";
 import Multi from "./pages/Multi";
+import InPlay from "./pages/InPlay";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="inplay" element={<InPlay />} />
             <Route path="cricket" element={<CricketListing />} />
             <Route path="multi" element={<Multi />} />
           </Route>

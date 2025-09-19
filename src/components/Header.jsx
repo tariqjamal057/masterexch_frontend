@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="bg-[#1e1e1e] text-white flex justify-between items-center h-20 px-4">
       <div className="flex items-center">
-        <Link to="/" clLinkssName="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src="http://masterexch.vip/Content/images/mobile/logo-masterexch.png?ver=6.2"
             alt="Logo"

@@ -36,7 +36,7 @@ const MobileNavbar = () => {
         <li>
           <NavLink
             exact
-            to="/"
+            to="/inplay"
             activeClassName="text-yellow-400"
             className="flex flex-col items-center text-xs"
           >

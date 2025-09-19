@@ -75,3 +75,12 @@ nav .icon-sports {
 .icon-promote {
     max-width: none !important;
 }
+
+.left-rounded {
+    border-radius: 5px 0 0 5px;
+}
+
+.right-rounded {
+    border-radius: 0px 5px 5px 0px;
+}
+

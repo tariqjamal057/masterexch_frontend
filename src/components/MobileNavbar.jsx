@@ -8,7 +8,7 @@ import { TiHome } from "react-icons/ti";
 const MobileNavbar = () => {
   const [navOption, setNavOption] = useState(2);
   return (
-    <nav>
+    <nav className="block md:hidden">
       <ul class="mini-lobby flex">
         <li id="mini" class="main-nav">
           <Link onclick="evolutionpop('DC','200215',true)" class="ui-link">

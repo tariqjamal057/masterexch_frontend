@@ -7,29 +7,27 @@ const ImagePreview = ({ index, classNames, image, title, extra = null }) => {
       key={index}
       className={`${classNames} h-50 md:h-70 overflow-hidden relative`}
     >
-      <img src={image} alt="web image" className="w-full h-full" />
+      <img src={image} alt={`${title} image`} className="w-full h-full" />
       {/* top right container */}
       {extra && (
         <div className="absolute top-0 right-0 flex flex-col items-start bg-black/50 text-white p-2 text-sm font-bold">
           <div className="flex items-center mb-1">
-            <span className="relative flex h-2 w-2 mr-1">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-            </span>
-            LIVE
+            <img
+              src="/live.png"
+              width={70}
+              height={40}
+              alt="live image"
+              className="rounded"
+            />
           </div>
           <dl className="space-y-1">
             <dd className="flex justify-between items-center text-xs">
               <p className="mr-2">Cricket</p>
-              <span className="bg-white text-black px-2 py-0.5 rounded">
-                16
-              </span>
+              <span className="bg-white text-black px-2 py-0.5 rounded">8</span>
             </dd>
             <dd className="flex justify-between items-center text-xs">
               <p className="mr-2">Soccer</p>
-              <span className="bg-white text-black px-2 py-0.5 rounded">
-                43
-              </span>
+              <span className="bg-white text-black px-2 py-0.5 rounded">8</span>
             </dd>
             <dd className="flex justify-between items-center text-xs">
               <p className="mr-2">Tennis</p>

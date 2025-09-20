@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Header = ({ activeTab, onTabChange }) => {
   return (
-    <header className="sticky top-0 z-40 bg-[#162931] ">
+    <header className=" bg-[#162931] ">
       <div className="mx-auto flex md:max-w-4xl items-center gap-0">
         <div className="flex flex-1 justify-evenly px-3 pe-0 py-2 md:px-8 md:py-4">
           {["In-Play", "Today", "Tomorrow", "Result"].map((tab, index) => (

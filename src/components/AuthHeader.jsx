@@ -85,7 +85,7 @@ const AuthHeader = () => {
   const quick_stakes = [1, 5, 10, 20, 500, 1000, 5000, 10000];
 
   return (
-    <div className="body border-b">
+    <div className="body border-b sticky top-0 z-40">
       {/* <img src="/sample.jpg" alt="" className="w-80 h-140" /> */}
       <div className="top-bar !bg-gradient-to-br !from-[#3c3c3c] !to-[#1e1e1e] !px-0 !py-2.5 gap-1">
         <div

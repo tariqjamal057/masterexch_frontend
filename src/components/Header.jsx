@@ -6,7 +6,7 @@ const Header = () => {
   const userAuthenticated = localStorage.getItem("userAuthenticated");
 
   return (
-    <header className="bg-[#1e1e1e] text-white flex justify-between items-center h-14 px-4">
+    <header className="bg-[#1e1e1e] text-white flex justify-between items-center h-11 px-4">
       <div className="flex items-center">
         <Link to="/" className="flex items-center">
           <img

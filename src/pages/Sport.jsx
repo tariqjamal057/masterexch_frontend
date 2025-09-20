@@ -35,15 +35,15 @@ const Header = ({ onGameSelect, selectedGame }) => {
   return (
     <header className="bg-[#3c3c3c]">
       <div className=" flex items-center justify-between gap-x-2 ">
-        <div className="flex-1 flex items-center px-3 gap-4 overflow-x-scroll pt-2 bg-[#162931]">
+        <div className="flex-1 flex items-center px-3 gap-4 overflow-x-scroll pt-2 bg-yellow-500">
           {games.map((game, index) => {
             const IconComponent = game.icon;
             return (
               <div
                 key={index}
-                className={`flex items-center gap-2 text-white cursor-pointer hover:text-yellow-500 transition-colors p-2 rounded-t relative ${
+                className={`flex items-center gap-2 text-black cursor-pointer hover:text-yellow-500 transition-colors p-2 rounded-t relative ${
                   selectedGame === game.name
-                    ? "text-yellow-500 bg-[#3c3c3c]"
+                    ? "!text-yellow-500 bg-[#3c3c3c]"
                     : ""
                 }`}
                 onClick={() => {

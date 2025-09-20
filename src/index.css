@@ -84,3 +84,23 @@ nav .icon-sports {
     border-radius: 0px 5px 5px 0px;
 }
 
+.inplay-detail-clippath {
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+
+}
+
+.inplay-fancy {
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+    border-radius: 0 5px 0 0;
+
+}
+
+.inplay-fancy-ques {
+    clip-path: polygon(0 0, 86% 0, 100% 100%, 16% 100%);
+
+}
+
+.inplay-premium {
+    clip-path: polygon(5% 0, 93% 0, 100% 100%, 0 100%);
+
+}

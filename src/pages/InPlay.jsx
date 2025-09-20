@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ activeTab, onTabChange }) => {
   return (
     <header className="sticky top-0 z-50 bg-[#162931] ">
       <div className="mx-auto flex md:max-w-4xl items-center gap-0">
-        <div className="flex flex-1 justify-evenly px-3 pe-0 py-3 md:px-8 md:py-4">
+        <div className="flex flex-1 justify-evenly px-3 pe-0 py-2 md:px-8 md:py-4">
           {["In-Play", "Today", "Tomorrow", "Result"].map((tab, index) => (
             <div
               key={tab}
@@ -36,6 +37,7 @@ const Header = ({ activeTab, onTabChange }) => {
 
 const SportContent = ({ sportData }) => {
   const [isParlayOn, setIsParlayOn] = useState(true);
+  const navigate = useNavigate();
 
   const handleParlayToggle = () => {
     setIsParlayOn(!isParlayOn);
@@ -57,26 +59,29 @@ const SportContent = ({ sportData }) => {
   );
 
   return (
-    <main className="mx-auto my-4 max-w-4xl px-2">
+    <main className="mx-auto my-4 max-w-4xl">
       <div className="flex bg-[#26424f]">
-        <div className="flex items-center gap-3 bg-gray-600 px-3 py-2 text-white shadow-inner">
-          <div
-            className={`relative h-6 w-12 cursor-pointer rounded-full p-1 transition-all duration-300 ${
-              isParlayOn
-                ? "bg-gradient-to-r from-green-500 to-green-600"
-                : "bg-gray-400"
-            }`}
-            onClick={handleParlayToggle}
-          >
+        {sportData.sport === "Cricket" && (
+          <div className="flex items-center gap-3 bg-gray-600 px-1 py-2 text-white shadow-inner">
             <div
-              className={`absolute left-1 top-1 h-4 w-4 rounded-full bg-white transition-all duration-300 ${
-                isParlayOn ? "translate-x-[1.2rem]" : ""
+              className={`relative h-5 w-10 cursor-pointer rounded-full p-1 transition-all flex justify-center items-center duration-300 ${
+                isParlayOn
+                  ? "bg-gradient-to-r from-green-500 to-green-600"
+                  : "bg-gray-400"
               }`}
-            ></div>
+              onClick={handleParlayToggle}
+            >
+              <div
+                className={`absolute left-1 h-4 w-4 rounded-full bg-white transition-all duration-300 ${
+                  isParlayOn ? "translate-x-[1.1rem]" : ""
+                }`}
+              ></div>
+            </div>
+            <span className="font-semibold text-sm">Parlay</span>
           </div>
-          <span className="font-semibold">Parlay</span>
-        </div>
-        <div className="flex-1 flex justify-center items-center text-lg text-white font-semibold">
+        )}
+
+        <div className="flex-1 flex justify-center items-center text-white font-semibold">
           <span>{sportData.sport}</span>
         </div>
       </div>
@@ -84,10 +89,14 @@ const SportContent = ({ sportData }) => {
         {sportData.matches.map((match, index) => (
           <div
             key={index}
-            className="flex justify-between border-b border-gray-200 p-4 last:border-b-0"
+            className="flex justify-between border-b border-gray-200 p-4 py-2 last:border-b-0"
+            onClick={() => {
+              localStorage.setItem("match", JSON.stringify(match));
+              navigate("detail");
+            }}
           >
             <div>
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 !text-sm">
                 <div className="flex gap-2">
                   {match.icons.map((icon, i) => (
                     <div
@@ -111,11 +120,11 @@ const SportContent = ({ sportData }) => {
                     </div>
                   ))}
                 </div>
-                <div className="text-sm font-bold text-green-500">In-Play</div>
+                <div className="!text-xs font-bold text-green-500">In-Play</div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="mt-1 h-3 w-3 rounded-full bg-green-500"></div>
-                <div className="text-lg font-bold text-sky-600 md:text-xl">
+                <div className="font-bold text-sky-600 md:text-xl">
                   {match.teams}
                 </div>
               </div>

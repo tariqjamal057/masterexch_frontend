@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-
   const handleLogin = (e) => {
     e.preventDefault();
     // Set a key in localStorage to indicate the user is authenticated
-    localStorage.setItem('userAuthenticated', 'true');
-    console.log("Login form submitted and 'userAuthenticated' key set in localStorage!");
-    navigate('/');
+    localStorage.setItem("userAuthenticated", true);
+    console.log(
+      "Login form submitted and 'userAuthenticated' key set in localStorage!"
+    );
+    navigate("/");
   };
 
   const togglePasswordVisibility = () => {
@@ -22,20 +22,30 @@ const LoginPage = () => {
   const validationCode = "8297"; // Static validation code from the original HTML
 
   return (
-    <div className="min-h-screen flex items-start justify-center bg-zinc-900 text-white"
+    <div
+      className="min-h-screen flex items-start justify-center bg-zinc-900 text-white"
       style={{
-        background: 'radial-gradient(1100px 220px at 50% -60px, rgba(219,0,0,.25), transparent 70%), linear-gradient(180deg, #0e0e10, #1a0b0d 60%)'
+        background:
+          "radial-gradient(1100px 220px at 50% -60px, rgba(219,0,0,.25), transparent 70%), linear-gradient(180deg, #0e0e10, #1a0b0d 60%)",
       }}
     >
-      <Link to="/" className="fixed right-3 top-3 w-11 h-11 rounded-full bg-black bg-opacity-65 flex items-center justify-center border border-white border-opacity-20 shadow-xl"
-        href="#" aria-label="Close">
+      <Link
+        to="/"
+        className="fixed right-3 top-3 w-11 h-11 rounded-full bg-black bg-opacity-65 flex items-center justify-center border border-white border-opacity-20 shadow-xl"
+        href="#"
+        aria-label="Close"
+      >
         <span className="text-white text-2xl font-extrabold">✕</span>
       </Link>
 
       <div className="w-full max-w-lg px-4 pt-4 pb-20">
         <div className="mt-2 leading-none">
-          <span className="inline-block font-black text-6xl text-[#ffd23a] tracking-wider md:text-5xl">Bazi</span>
-          <span className="inline-block font-extrabold text-3xl ml-2 md:text-2xl">PBU</span>
+          <span className="inline-block font-black text-6xl text-[#ffd23a] tracking-wider md:text-5xl">
+            Bazi
+          </span>
+          <span className="inline-block font-extrabold text-3xl ml-2 md:text-2xl">
+            PBU
+          </span>
         </div>
 
         <div className="mt-2 bg-[#ffb000] border-6 border-[#f08c00] rounded-[18px] shadow-xl">
@@ -96,13 +106,39 @@ const LoginPage = () => {
         </div>
 
         <div className="text-center text-sm leading-relaxed text-[#e9e9e9]">
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline">Privacy Policy</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> Terms and Conditions</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> Rules and Regulations</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> KYC</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> Responsible Gaming</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> Self-Exclusion Policy</a> |
-          <a href="#" className="text-[#ffcc33] no-underline hover:underline"> Underage Policy</a>
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            Privacy Policy
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            Terms and Conditions
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            Rules and Regulations
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            KYC
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            Responsible Gaming
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            Self-Exclusion Policy
+          </a>{" "}
+          |
+          <a href="#" className="text-[#ffcc33] no-underline hover:underline">
+            {" "}
+            Underage Policy
+          </a>
         </div>
       </div>
     </div>

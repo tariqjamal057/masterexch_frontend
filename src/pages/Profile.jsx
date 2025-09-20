@@ -2,8 +2,10 @@ import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { HiUserCircle } from "react-icons/hi";
 import { RiLogoutBoxLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+    const navigate = useNavigate()
   const sections = [
     {
       name: "My Profile",
@@ -58,7 +60,7 @@ const Profile = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center w-full items-center gap-1 font-semibold bg-gradient-to-bl from-red-400 to-red-700 py-2 text-white">
+      <div className="flex justify-center w-full items-center gap-1 font-semibold bg-gradient-to-bl from-red-400 to-red-700 py-2 text-white" onClick={() => {localStorage.removeItem("userAuthenticated");navigate("/")}}>
         LOGOUT <RiLogoutBoxLine />
       </div>
     </div>

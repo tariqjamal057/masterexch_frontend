@@ -218,7 +218,7 @@ const InplayDetail = () => {
               <span className="">Premium Cricket</span>
             </div>
           </div>
-          <div className="bg-teal-500 flex overflow-hidden gap-1 items-center text-base p-1">
+          <div className="bg-teal-500 flex overflow-hidden gap-1 items-center text-sm p-1">
             <div className="text-green-500 bg-white p-2 py-1 rounded">All</div>
             <div className="border-r px-1">Normal</div>
             <div className="border-r px-1">Fancy</div>
@@ -289,7 +289,7 @@ const InplayDetail = () => {
                   <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
                     <div className="flex flex-col justify-center items-center">
                       <span className="font-semibold">{getRandomInt()}</span>
-                      <span className="text-xs"> 
+                      <span className="text-xs">
                         {getRandomFloatWithPrecision()}
                       </span>
                     </div>

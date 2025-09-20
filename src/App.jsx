@@ -10,6 +10,7 @@ import Multi from "./pages/Multi";
 import InPlay from "./pages/InPlay";
 import InplayDetail from "./pages/InplayDetail";
 import Profile from "./pages/Profile";
+import Sport from "./pages/Sport";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="cricket" element={<CricketListing />} />
             <Route path="multi" element={<Multi />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="sports" element={<Sport />} />
           </Route>
         </Routes>
       </Router>

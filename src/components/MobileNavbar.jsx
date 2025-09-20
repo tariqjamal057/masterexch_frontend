@@ -24,7 +24,7 @@ const MobileNavbar = () => {
           class={`${navOption === 0 ? "select" : ""} text-center`}
           onClick={() => setNavOption(0)}
         >
-          <Link to="/" class="ui-link">
+          <Link to="/sports" class="ui-link">
             <img
               class="icon-sports"
               src="http://masterexch.vip/Content/images/transparent.gif"

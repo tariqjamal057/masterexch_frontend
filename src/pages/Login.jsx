@@ -3,12 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginnValidationCode, setLoginValidationCode] = useState("")
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     // Set a key in localStorage to indicate the user is authenticated
     localStorage.setItem("userAuthenticated", true);
+    localStorage.setItem("username", username);
     console.log(
       "Login form submitted and 'userAuthenticated' key set in localStorage!"
     );
@@ -61,6 +65,8 @@ const LoginPage = () => {
               type="text"
               placeholder="Username"
               autoComplete="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="my-3 relative">
@@ -69,6 +75,8 @@ const LoginPage = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <span
               className="absolute right-3 top-1/2 -translate-y-1/2 text-lg opacity-75 cursor-pointer select-none"
@@ -85,6 +93,8 @@ const LoginPage = () => {
                 placeholder="Validation Code"
                 inputMode="numeric"
                 pattern="[0-9]*"
+                value={loginnValidationCode}
+                onChange={(e) => setLoginValidationCode(e.target.value)}
               />
               <div className="bg-black text-white p-3 rounded-xl font-extrabold tracking-[2px] min-w-[90px] text-center">
                 {validationCode}

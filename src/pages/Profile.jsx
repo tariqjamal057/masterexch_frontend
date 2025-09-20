@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const navigate = useNavigate();
+  const username = localStorage.getItem("username");
   const sections = [
     {
       name: "My Profile",
@@ -52,15 +53,15 @@ const Profile = () => {
           <div className="">
             <div className="flex justify-between p-2 items-center bg-gray-800 text-white">
               <p className="flex items-center justify-center ">
-                <HiUserCircle /> <span className="p-[2px]">df404</span>
+                <HiUserCircle /> <span className="p-[2px]">{username}</span>
               </p>
               <p>GMT+6.0</p>
             </div>
             <div className="flex flex-col">
               {sections.map((data, index) => (
-                <div className="p-2 font-semibold text-teal-500 bg-white shadow flex justify-between items-center">
+                <div className="p-2 font-semibold text-[#5fbaff] bg-white shadow flex justify-between items-center">
                   <p>{data.name}</p>
-                  <p className="text-black p-1 border border-gray-100">
+                  <p className="text-black p-1 border border-gray-300 rounded">
                     <FaAngleRight />
                   </p>
                 </div>

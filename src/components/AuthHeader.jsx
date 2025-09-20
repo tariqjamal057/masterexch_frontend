@@ -52,7 +52,7 @@ const AuthHeader = () => {
           </div>
         </div>
         {/* <span className="!h-full">></span> */}
-        <div className="scroll h-full !py-[8px]">
+        <div className="scroll h-full !py-[2px]">
           <span>
             Welcome to 11wickets established • Welcome to 11wickets established
             •

@@ -60,7 +60,7 @@ const Profile = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center w-full items-center gap-1 font-semibold bg-gradient-to-bl from-red-400 to-red-700 py-2 text-white" onClick={() => {localStorage.removeItem("userAuthenticated");navigate("/")}}>
+      <div className="flex justify-center w-full items-center gap-1 font-semibold bg-gradient-to-bl from-red-400 to-red-700 py-2 text-white" onClick={() => {localStorage.removeItem("userAuthenticated");window.location.href = "/"}}>
         LOGOUT <RiLogoutBoxLine />
       </div>
     </div>

@@ -4,6 +4,34 @@ import { IoIosInformationCircleOutline, IoMdAlarm } from "react-icons/io";
 
 const InplayDetail = () => {
   const match = JSON.parse(localStorage.getItem("match"));
+
+  function getRandomInt(min = 0, max = 1000) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function getRandomFloatWithPrecision(integerDigits = 2, decimalDigits = 2) {
+    // Determine the min and max for the integer part
+    const minInteger = Math.pow(10, integerDigits - 1); // e.g., 10 for 2 digits
+    const maxInteger = Math.pow(10, integerDigits) - 1; // e.g., 99 for 2 digits
+
+    // Generate a random integer in the desired range (e.g., 10 to 99)
+    const integerPart =
+      Math.floor(Math.random() * (maxInteger - minInteger + 1)) + minInteger;
+
+    // Generate a random integer for the decimal part (e.g., 0 to 99)
+    const decimalPart = Math.floor(Math.random() * Math.pow(10, decimalDigits));
+
+    // Combine and format the number
+    const formattedNumber = `${integerPart}.${String(decimalPart).padStart(
+      decimalDigits,
+      "0"
+    )}`;
+
+    return parseFloat(formattedNumber);
+  }
+
   return (
     <div className="min-h-screen bg-gray-100  font-sans text-white">
       <div className="flex items-center justify-between bg-gray-800 py-2 px-2">
@@ -222,174 +250,54 @@ const InplayDetail = () => {
             </thead>
           </table>
 
-          <table className="w-full bg-white">
-            <thead className="bg-[#162931] text-sm">
-              <tr className="">
-                <th className="">
-                  <div className="flex items-center px-2">
-                    10 over {match.teams.split(" v ")[0]}
-                  </div>
-                </th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2">
-                  <IoIosInformationCircleOutline className="text-white text-base" />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="">
-                <td colSpan={5} className="px-2"></td>
-                <td></td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">38</span>
-                    <span className="text-xs">35.08</span>
-                  </div>
-                </td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">40</span>
-                    <span className="text-xs">25.08</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table className="w-full bg-white">
-            <thead className="bg-[#162931] text-sm">
-              <tr className="">
-                <th className="">
-                  <div className="flex items-center px-2">
-                    10 over {match.teams.split(" v ")[0]}
-                  </div>
-                </th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2">
-                  <IoIosInformationCircleOutline className="text-white text-base" />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="">
-                <td colSpan={5} className="px-2"></td>
-                <td></td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">38</span>
-                    <span className="text-xs">35.08</span>
-                  </div>
-                </td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">40</span>
-                    <span className="text-xs">25.08</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table className="w-full bg-white">
-            <thead className="bg-[#162931] text-sm">
-              <tr className="">
-                <th className="">
-                  <div className="flex items-center px-2">
-                    10 over {match.teams.split(" v ")[0]}
-                  </div>
-                </th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2">
-                  <IoIosInformationCircleOutline className="text-white text-base" />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="">
-                <td colSpan={5} className="px-2"></td>
-                <td></td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">38</span>
-                    <span className="text-xs">35.08</span>
-                  </div>
-                </td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">40</span>
-                    <span className="text-xs">25.08</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table className="w-full bg-white">
-            <thead className="bg-[#162931] text-sm">
-              <tr className="">
-                <th className="">
-                  <div className="flex items-center px-2">
-                    10 over {match.teams.split(" v ")[0]}
-                  </div>
-                </th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2"></th>
-                <th className="p-2 text-center"></th>
-                <th className="p-2">
-                  <IoIosInformationCircleOutline className="text-white text-base" />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="">
-                <td colSpan={5} className="px-2"></td>
-                <td></td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">38</span>
-                    <span className="text-xs">35.08</span>
-                  </div>
-                </td>
-                <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
-                  <div className="flex flex-col justify-center items-center">
-                    <span className="font-semibold">40</span>
-                    <span className="text-xs">25.08</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          {Array.from({ length: 8 }, (_, index) => (
+            <table className="w-full bg-white">
+              <thead className="bg-[#162931] text-sm">
+                <tr className="">
+                  <th className="">
+                    <div className="flex items-center px-2">
+                      {index + 1} over {match.teams.split(" v ")[0]}
+                    </div>
+                  </th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2 text-center"></th>
+                  <th className="p-2"></th>
+                  <th className="p-2 text-center"></th>
+                  <th className="p-2">
+                    <IoIosInformationCircleOutline className="text-white text-base" />
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="">
+                  <td colSpan={5} className="px-2"></td>
+                  <td></td>
+                  <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
+                    <div className="flex flex-col justify-center items-center">
+                      <span className="font-semibold">{getRandomInt()}</span>
+                      <span className="text-xs">
+                        {getRandomFloatWithPrecision()}
+                      </span>
+                    </div>
+                  </td>
+                  <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
+                    <div className="flex flex-col justify-center items-center">
+                      <span className="font-semibold">{getRandomInt()}</span>
+                      <span className="text-xs"> 
+                        {getRandomFloatWithPrecision()}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          ))}
         </div>
       </div>
       <div className="mt-2 rounded-lg shadow-md">

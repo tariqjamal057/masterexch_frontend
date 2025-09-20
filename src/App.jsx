@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Multi from "./pages/Multi";
 import InPlay from "./pages/InPlay";
 import InplayDetail from "./pages/InplayDetail";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="inplay/detail" element={<InplayDetail />} />
             <Route path="cricket" element={<CricketListing />} />
             <Route path="multi" element={<Multi />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </Router>

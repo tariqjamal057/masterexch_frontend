@@ -76,7 +76,7 @@ const MobileNavbar = () => {
           class={`${navOption === 4 ? "select" : ""} text-center`}
           onClick={() => setNavOption(4)}
         >
-          <Link to="/" class="ui-link">
+          <Link to="/profile" class="ui-link">
             <img
               class="icon-account"
               src="http://masterexch.vip/Content/images/transparent.gif"

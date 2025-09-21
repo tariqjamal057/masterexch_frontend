@@ -5,7 +5,7 @@ const ImagePreview = ({ index, classNames, image, title, extra = null }) => {
   return (
     <div
       key={index}
-      className={`${classNames} h-50 md:h-70 overflow-hidden relative`}
+      className={`${classNames} h-38 md:h-70 overflow-hidden relative`}
     >
       <img src={image} alt={`${title} image`} className="w-full h-full" />
       {/* top right container */}
@@ -38,7 +38,7 @@ const ImagePreview = ({ index, classNames, image, title, extra = null }) => {
       )}
       {/* bottom */}
       <Link to="/">
-        <div className="absolute inset-x-0 bottom-0 bg-black/50 text-white flex justify-between items-center p-2">
+        <div className="absolute inset-x-0 bottom-0 bg-black/50 text-white flex justify-between items-center p-2 py-1">
           <div className="font-bold text-lg">{title}</div>
           <div className="rounded bg-amber-400">
             <span className="text-sm  px-1 cursor-pointer">Play Now</span>

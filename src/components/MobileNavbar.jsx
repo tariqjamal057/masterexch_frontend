@@ -7,6 +7,7 @@ import { TiHome } from "react-icons/ti";
 
 const MobileNavbar = () => {
   const [navOption, setNavOption] = useState(2);
+  const userAuthenticated = localStorage.getItem("userAuthenticated");
   return (
     <nav className="block md:hidden">
       <ul class="mini-lobby flex">
@@ -76,7 +77,10 @@ const MobileNavbar = () => {
           class={`${navOption === 4 ? "select" : ""} text-center`}
           onClick={() => setNavOption(4)}
         >
-          <Link to="/profile" class="ui-link">
+          <Link
+            to={`${userAuthenticated ? "/profile" : "/login"}`}
+            class="ui-link"
+          >
             <img
               class="icon-account"
               src="http://masterexch.vip/Content/images/transparent.gif"

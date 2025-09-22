@@ -11,6 +11,7 @@ import InPlay from "./pages/InPlay";
 import InplayDetail from "./pages/InplayDetail";
 import Profile from "./pages/Profile";
 import Sport from "./pages/Sport";
+import BalanceTransfer from "./pages/BalanceTransfer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="multi" element={<Multi />} />
             <Route path="profile" element={<Profile />} />
             <Route path="sports" element={<Sport />} />
+            <Route path="profile/balance-transfer" element={<BalanceTransfer />} />
           </Route>
         </Routes>
       </Router>

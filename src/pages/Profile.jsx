@@ -2,7 +2,7 @@ import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { HiUserCircle } from "react-icons/hi";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const Profile = () => {
     },
     {
       name: "Balance Transfer",
-      url: "#",
+      url: "/profile/balance-transfer",
     },
   ];
   const userAuthenticated = localStorage.getItem("userAuthenticated");
@@ -59,12 +59,14 @@ const Profile = () => {
             </div>
             <div className="flex flex-col">
               {sections.map((data, index) => (
-                <div className="p-2 font-semibold text-[#5fbaff] bg-white shadow flex justify-between items-center">
-                  <p>{data.name}</p>
-                  <p className="text-black p-1 border border-gray-300 rounded">
-                    <FaAngleRight />
-                  </p>
-                </div>
+                <Link key={index} to={data.url}>
+                  <div className="p-2 font-semibold text-[#5fbaff] bg-white shadow flex justify-between items-center">
+                    <p>{data.name}</p>
+                    <p className="text-black p-1 border border-gray-300 rounded">
+                      <FaAngleRight />
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

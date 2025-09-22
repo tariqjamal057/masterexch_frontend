@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { GrCircleQuestion } from "react-icons/gr";
 import { IoIosInformationCircleOutline, IoMdAlarm } from "react-icons/io";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { MdCancel } from "react-icons/md";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { LuDelete } from "react-icons/lu";
 
 const InplayDetail = () => {
   const match = JSON.parse(localStorage.getItem("match"));
+  const [showBettingInterface, setShowBettingInterface] = useState(false);
+  const [bettingTableIndex, setBettingTableIndex] = useState(null);
+  const [betAmount1, setBetAmount1] = useState(0);
+  const [betAmount2, setBetAmount2] = useState(null);
 
   function getRandomInt(min = 0, max = 1000) {
     min = Math.ceil(min);
@@ -31,6 +39,161 @@ const InplayDetail = () => {
 
     return parseFloat(formattedNumber);
   }
+
+  const handleBetClick = (tableIndex = null) => {
+    if (tableIndex !== null) {
+      setBettingTableIndex(tableIndex);
+    }
+    setShowBettingInterface(!showBettingInterface);
+  };
+
+  const handleCancel = () => {
+    setShowBettingInterface(false);
+    setBetAmount1(0);
+    setBetAmount2(0);
+  };
+
+  const BettingInterface = () => (
+    <tr className="bg-blue-100">
+      <td colSpan="12" className="">
+        {/* First row - Two counters */}
+        <div className="flex gap-3 mb-4 px-2 pt-3.5">
+          <div className="flex flex-col justify-center items-center">
+            <span className="text-xs opacity-0">Min bet: 1</span>
+            <div className="flex items-center border rounded w-full overflow-hidden border-gray-300 text-blue-500 bg-white">
+              <button
+                className="p-3 text-lg bg-gradient-to-bl from-[#f1f1f1] to-[#f5f5f5] border-r border-gray-300"
+                onClick={() => setBetAmount1(Math.max(0, betAmount1 - 1))}
+              >
+                <FaMinus />
+              </button>
+              <input
+                type="number"
+                value={betAmount1}
+                onChange={(e) => setBetAmount1(parseInt(e.target.value) || 0)}
+                className="w-20 text-center border-0 outline-none flex-1 font-semibold text-black"
+                min="0"
+              />
+              <button
+                className="p-3 text-lg bg-gradient-to-bl from-[#f1f1f1] to-[#f5f5f5] border-l border-gray-300"
+                onClick={() => setBetAmount1(betAmount1 + 1)}
+              >
+                <FaPlus />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center items-center">
+            <span className="text-xs">Min bet: 1</span>
+            <div className="flex items-center border rounded w-full overflow-hidden border-gray-300 text-blue-500 bg-white">
+              <button
+                className="p-3 text-lg bg-gradient-to-bl from-[#f1f1f1] to-[#f5f5f5] border-r border-gray-300"
+                onClick={() => setBetAmount2(Math.max(0, betAmount2 - 1))}
+              >
+                <FaMinus />
+              </button>
+              <input
+                type="number"
+                value={betAmount2}
+                onChange={(e) => setBetAmount2(parseInt(e.target.value) || 0)}
+                className="w-20 text-center border-0 outline-none flex-1 font-semibold text-black"
+                min="0"
+              />
+              <button
+                className="p-3 text-lg bg-gradient-to-bl from-[#f1f1f1] to-[#f5f5f5] border-l border-gray-300"
+                onClick={() => setBetAmount2(betAmount2 + 1)}
+              >
+                <FaPlus />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Second row - Quick bet amounts */}
+        <div className="flex justify-evenly  mb-2 bg-gray-800">
+          {[10, 30, 50, 100, 200, 500].map((amount) => (
+            <button
+              key={amount}
+              className="w-full h-full border-l px-2 py-1 border-[#3e3e3e] text-white  hover:bg-blue-600"
+              onClick={() => {
+                setBetAmount1(amount);
+                setBetAmount2(amount);
+              }}
+            >
+              {amount}
+            </button>
+          ))}
+        </div>
+
+        {/* Third row - Grid system */}
+        <div className="grid grid-cols-7  mb-4 bg-gray-100">
+          {[...Array(9).keys()].map((index) => (
+            <button
+              key={index + 1}
+              className="p-2 border-l border-b border-gray-300 "
+              onClick={() => {
+                setBetAmount1(index + 1);
+                setBetAmount2(index + 1);
+              }}
+            >
+              {index + 1}
+            </button>
+          ))}
+
+          <button
+            className="p-2 border-l border-b border-gray-300 "
+            onClick={() => {
+              setBetAmount1(0);
+              setBetAmount2(0);
+            }}
+          >
+            0
+          </button>
+          <button
+            className="p-2 border-l border-b border-gray-300 "
+            onClick={() => {
+              setBetAmount1(0.0);
+              setBetAmount2(0.0);
+            }}
+          >
+            0.00
+          </button>
+          <button
+            className="p-2 border-l border-b border-gray-300 "
+            onClick={() => {
+              setBetAmount1(".");
+              setBetAmount2(".");
+            }}
+          >
+            .
+          </button>
+
+          {/* Cancel button at the end */}
+          <div className="flex items-center justify-center col-start-7 row-start-1 row-span-2 border  border-gray-300 ">
+            <button
+              className="p-2 text-black text-lg rounded-full "
+              onClick={handleCancel}
+            >
+              <LuDelete />
+            </button>
+          </div>
+        </div>
+
+        {/* Fourth row - Action buttons */}
+        <div className="flex justify-center gap-2 px-2 mb-4">
+          <button
+            className="w-full py-2 bg-gradient-to-tl from-gray-100 to-gray-200 text-black font-semibold rounded"
+            onClick={handleCancel}
+          >
+            Cancel
+          </button>
+          <button className={`w-full py-2  text-black rounded bg-yellow-300 font-semibold ${!betAmount2? "opacity-50" : ""}`} disabled={!betAmount2? true : false}>
+            Place Bet
+          </button>
+        </div>
+      </td>
+    </tr>
+  );
 
   return (
     <div className="min-h-screen bg-gray-100  font-sans text-white">
@@ -82,19 +245,30 @@ const InplayDetail = () => {
               <td></td>
               <td></td>
               <td></td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-blue-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-blue-300 cursor-pointer"
+                onClick={() => handleBetClick(0)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">38</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-pink-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-pink-300 cursor-pointer"
+                onClick={() => handleBetClick(0)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">40</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
             </tr>
+            {showBettingInterface && bettingTableIndex === 0 && (
+              <BettingInterface />
+            )}
             <tr className="border-b border-green-300">
               <td colSpan={5} className="px-2">
                 {match.teams.split(" v ")[1]}
@@ -102,19 +276,30 @@ const InplayDetail = () => {
               <td></td>
               <td></td>
               <td></td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-blue-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-blue-300 cursor-pointer"
+                onClick={() => handleBetClick(1)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">1.02</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-pink-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-pink-300 cursor-pointer"
+                onClick={() => handleBetClick(1)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">38.6</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
             </tr>
+            {showBettingInterface && bettingTableIndex === 1 && (
+              <BettingInterface />
+            )}
           </tbody>
         </table>
         <div className="flex justify-between items-center py-2 px-2 bg-gray-800 text-sm">
@@ -164,19 +349,30 @@ const InplayDetail = () => {
               <td></td>
               <td></td>
               <td></td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-blue-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-blue-300 cursor-pointer"
+                onClick={() => handleBetClick(2)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">38</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-pink-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-pink-300 cursor-pointer"
+                onClick={() => handleBetClick(2)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">40</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
             </tr>
+            {showBettingInterface && bettingTableIndex === 2 && (
+              <BettingInterface />
+            )}
             <tr className="border-b border-green-300">
               <td colSpan={5} className="px-2">
                 {match.teams.split(" v ")[1]}
@@ -185,21 +381,33 @@ const InplayDetail = () => {
               <td></td>
               <td></td>
               <td></td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-blue-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-blue-300 cursor-pointer"
+                onClick={() => handleBetClick(3)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">1.02</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
-              <td colSpan={2} className="text-center p-4 py-1 bg-pink-300">
+              <td
+                colSpan={2}
+                className="text-center p-4 py-1 bg-pink-300 cursor-pointer"
+                onClick={() => handleBetClick(3)}
+              >
                 <div className="flex flex-col justify-center items-center">
                   <span className="font-semibold">38.6</span>
                   <span className="text-xs">25.08</span>
                 </div>
               </td>
             </tr>
+            {showBettingInterface && bettingTableIndex === 3 && (
+              <BettingInterface />
+            )}
           </tbody>
         </table>
+
         <div className="border w-full my-2 border-gray-400"></div>
         <div>
           <div className="flex items-center">
@@ -278,7 +486,11 @@ const InplayDetail = () => {
                 <tr className="">
                   <td colSpan={5} className="px-2"></td>
                   <td></td>
-                  <td colSpan={3} className="text-center p-4 py-1 bg-blue-300">
+                  <td
+                    colSpan={3}
+                    className="text-center p-4 py-1 bg-blue-300 cursor-pointer"
+                    onClick={handleBetClick}
+                  >
                     <div className="flex flex-col justify-center items-center">
                       <span className="font-semibold">{getRandomInt()}</span>
                       <span className="text-xs">
@@ -286,7 +498,11 @@ const InplayDetail = () => {
                       </span>
                     </div>
                   </td>
-                  <td colSpan={3} className="text-center p-4 py-1 bg-pink-300">
+                  <td
+                    colSpan={3}
+                    className="text-center p-4 py-1 bg-pink-300 cursor-pointer"
+                    onClick={handleBetClick}
+                  >
                     <div className="flex flex-col justify-center items-center">
                       <span className="font-semibold">{getRandomInt()}</span>
                       <span className="text-xs">

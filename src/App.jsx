@@ -12,6 +12,7 @@ import InplayDetail from "./pages/InplayDetail";
 import Profile from "./pages/Profile";
 import Sport from "./pages/Sport";
 import BalanceTransfer from "./pages/BalanceTransfer";
+import MatchResult from "./pages/MatchResult";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
             <Route path="sports" element={<Sport />} />
             <Route path="profile/balance-transfer" element={<BalanceTransfer />} />
+            <Route path="profile/match-result" element={<MatchResult />} />
           </Route>
         </Routes>
       </Router>

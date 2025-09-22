@@ -34,7 +34,7 @@ const Profile = () => {
     },
     {
       name: "Check Sport Wise Result",
-      url: "#",
+      url: "/profile/match-result",
     },
     {
       name: "Balance Transfer",

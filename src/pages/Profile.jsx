@@ -10,27 +10,27 @@ const Profile = () => {
   const sections = [
     {
       name: "My Profile",
-      url: "#",
+      url: "/profile/",
     },
     {
       name: "Balance Overview",
-      url: "#",
+      url: "/profile/balance-overview",
     },
     {
       name: "My Bets",
-      url: "#",
+      url: "/profile/my-bets",
     },
     {
       name: "Bets History",
-      url: "#",
+      url: "/profile/dashboard",
     },
     {
       name: "Profit & Loss",
-      url: "#",
+      url: "/profile/dashboard",
     },
     {
       name: "Activity Log",
-      url: "#",
+      url: "/profile/activity-log",
     },
     {
       name: "Check Sport Wise Result",

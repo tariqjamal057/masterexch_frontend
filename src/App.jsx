@@ -13,6 +13,8 @@ import Profile from "./pages/Profile";
 import Sport from "./pages/Sport";
 import BalanceTransfer from "./pages/BalanceTransfer";
 import MatchResult from "./pages/MatchResult";
+import UserProfileLayout from "./pages/UserProfile/Layout";
+import ActivityLog from "./pages/UserProfile/ActivityLog";
 
 function App() {
   return (
@@ -28,8 +30,14 @@ function App() {
             <Route path="multi" element={<Multi />} />
             <Route path="profile" element={<Profile />} />
             <Route path="sports" element={<Sport />} />
-            <Route path="profile/balance-transfer" element={<BalanceTransfer />} />
+            <Route
+              path="profile/balance-transfer"
+              element={<BalanceTransfer />}
+            />
             <Route path="profile/match-result" element={<MatchResult />} />
+          </Route>
+          <Route path="/profile" element={<UserProfileLayout />}>
+            <Route path="activity-log" element={<ActivityLog />} />
           </Route>
         </Routes>
       </Router>

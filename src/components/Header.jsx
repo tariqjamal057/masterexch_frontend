@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex items-center">
         <Link to="/" className="flex items-center">
           <img
-            src="http://masterexch.vip/Content/images/mobile/logo-masterexch.png?ver=6.2"
+            src="/logo.png"
             alt="Logo"
             className="w-40 md:w-60 h-auto"
           />

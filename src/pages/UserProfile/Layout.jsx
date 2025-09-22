@@ -38,9 +38,9 @@ const UserProfileLayout = () => {
   ];
 
   return (
-    <div className="w-full overflow-visible">
-      <header className="flex flex-col">
-        <div className="w-full flex justify-between items-center gap-x-4 bg-gray-800 px-2 py-1 overflow-visible">
+    <div className="w-full min-w-[100vw] overflow-x-auto">
+      <header className="flex flex-col min-w-[1200px]">
+        <div className="w-full flex justify-between items-center gap-x-4 bg-gray-800 px-2 py-1">
           <div className="flex justify-center items-center gap-2">
             <Link to="/" className="flex items-center">
               <img
@@ -71,7 +71,7 @@ const UserProfileLayout = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center">
-                <div className="py-[0.3px] px-1.5 rounded border border-yellow-400 me-1">
+                <div className="py-[0.3px] px-1.5 rounded border border-yellow-400 me-1 text-white">
                   +4
                 </div>
                 <div className="bg-[#2c2c2c] text-base p-1.5 font-bold text-yellow-500">
@@ -85,7 +85,7 @@ const UserProfileLayout = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-between items-center gap-x-4 bg-gray-950 px-2 overflow-visible">
+        <div className="w-full flex justify-between items-center gap-x-4 bg-gray-950 px-2">
           <div className="flex items-center gap-6 text-white ">
             {navigationItems.map((item, index) => (
               <Link key={index} to="#" className="text-sm font-medium">
@@ -105,16 +105,16 @@ const UserProfileLayout = () => {
           </div>
         </div>
       </header>
-      <div className="flex items-center gap-2 w-70">
-        <div className="flex flex-col w-full">
-          <div className="flex justify-between items-center text-white bg-gray-700 text-sm px-2 py-1">
+      <div className="flex gap-2 w-full bg-gray-50 min-w-[1200px]">
+        <div className="flex flex-col w-70">
+          <div className="flex justify-between items-center text-white bg-gray-700 text-sm px-2 py-1 w-70 flex-nowrap">
             <HiOutlineDotsVertical />
             My Account
           </div>
           {sideBarItemsWithHref.map((item, index) => (
-            <Link key={index} to={item.href}>
+            <Link key={index} to={item.href} className="w-70">
               <div
-                className={`flex justify-between items-center text-black text-sm px-2 py-1 border-b border-gray-300 border-r font-semibold ${
+                className={`flex justify-between items-center text-black text-sm px-2 py-1 border-b border-gray-300 border-r font-semibold bg-white w-70 ${
                   path.pathname.includes(item.href) ? "bg-yellow-200" : ""
                 }`}
               >
@@ -122,6 +122,9 @@ const UserProfileLayout = () => {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="flex-1 min-w-[calc(100vw-280px)]">
+          <Outlet />
         </div>
       </div>
     </div>

@@ -43,19 +43,18 @@ const LoginPage = () => {
       </Link>
 
       <div className="w-full max-w-lg px-4 pt-4 pb-20">
-        <div className="mt-2 leading-none">
-          <span className="inline-block font-black text-6xl text-[#ffd23a] tracking-wider md:text-5xl">
-            Bazi
-          </span>
-          <span className="inline-block font-extrabold text-3xl ml-2 md:text-2xl">
-            PBU
-          </span>
+        <div className="mt-2 leading-none hover:text-yellow-300 transition-colors duration-300">
+          <h1 className="text-6xl md:text-5xl font-bold text-[#ffd23a] tracking-wider">
+            Sports Hub
+          </h1>
         </div>
 
         <div className="mt-2 bg-[#ffb000] border-6 border-[#f08c00] rounded-[18px] shadow-xl">
-          <div className="min-h-[150px] rounded-[12px] bg-gradient-to-br from-[#ffcd38] to-[#ffa000] flex items-center justify-center p-3 text-[#5b2c00] font-extrabold text-center">
-            এখানে ব্যানার/ইমেজ যাবে
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Banner"
+            className="min-h-[150px] rounded-[12px] w-full h-full object-cover"
+          />
         </div>
 
         <form className="mt-5" onSubmit={handleLogin}>
@@ -102,18 +101,14 @@ const LoginPage = () => {
             </div>
           </div>
           <button
-            className="w-full p-4 mt-2 bg-[#c62828] border-0 rounded-xl text-white font-extrabold text-xl shadow-lg shadow-red-700/40 cursor-pointer"
+            className="w-full p-4 mt-2 bg-[#c62828] border-0 rounded-xl text-white font-extrabold text-xl shadow-lg shadow-red-700/40 cursor-pointer hover:bg-red-600 transition-all duration-300"
             type="submit"
           >
             Login
           </button>
         </form>
 
-        <div className="bg-white rounded-xl p-3 my-5 flex items-center justify-between text-zinc-900">
-          <div className="font-extrabold">নগদ</div>
-          <div className="font-extrabold">উপায়</div>
-          <div className="text-3xl">🚀</div>
-        </div>
+
 
         <div className="text-center text-sm leading-relaxed text-[#e9e9e9]">
           <a href="#" className="text-[#ffcc33] no-underline hover:underline">

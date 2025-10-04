@@ -108,7 +108,7 @@ export const imageData = [
     image:
       "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
     classNames: "col-span-6 md:col-span-3",
-    title: "Jigsaw Puzzles",
+    title: "Puzzles",
     extra: null,
   },
   {
@@ -122,7 +122,7 @@ export const imageData = [
     image:
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
     classNames: "col-span-6 md:col-span-3",
-    title: "Educational Video Games and Mobile Games",
+    title: "Games",
     extra: null,
   },
   {
@@ -136,7 +136,7 @@ export const imageData = [
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
     classNames: "col-span-6 md:col-span-3",
-    title: "Storytelling Games",
+    title: "Story Game",
     extra: null,
   },
 ];

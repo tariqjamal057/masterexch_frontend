@@ -43,11 +43,9 @@ const UserProfileLayout = () => {
         <div className="w-full flex justify-between items-center gap-x-4 bg-gray-800 px-2 py-1">
           <div className="flex justify-center items-center gap-2">
             <Link to="/" className="flex items-center">
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="w-[160px] md:w-60 h-auto"
-              />
+            <h1 className="text-2xl md:text-3xl font-bold text-white">
+              Sports Hub
+            </h1>
             </Link>
             <div className="relative">
               <input

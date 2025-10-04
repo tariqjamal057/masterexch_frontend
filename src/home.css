@@ -9,6 +9,7 @@ nav {
 
 nav .select {
   background-image: linear-gradient(-180deg, #32617f 20%, #1f4258 91%);
+
 }
 
 nav .main-nav {
@@ -21,7 +22,6 @@ nav .main-nav:before {
   top: -4.2666666667vw;
   width: 100%;
   height: 4.5333333333vw;
-  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient></defs><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" fill="url(%23a)" fill-rule="evenodd"/></svg>');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   pointer-events: none;
@@ -29,7 +29,6 @@ nav .main-nav:before {
 }
 
 nav .main-nav.select:before {
-  background-image: url('data:image/svg+xml,<svg width="75" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient x1="50%" y1="19.56%" x2="50%" y2="90.65%" id="a"><stop stop-color="%23243A48" offset="0%"/><stop stop-color="%23172732" offset="100%"/></linearGradient><path d="M74.98 16H75v50H0V16h.02C.7 15.33 16.36.02 37.5.02v8-8C58.64.02 74.3 15.33 74.98 16z" id="b"/></defs><g fill="none" fill-rule="evenodd"><use fill="url(%23a)" xlink:href="%23b"/><use fill-opacity=".8" fill="%23BEEBFA" style="mix-blend-mode:overlay" xlink:href="%23b"/></g></svg>');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

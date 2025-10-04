@@ -10,81 +10,64 @@ const MobileNavbar = () => {
   const userAuthenticated = localStorage.getItem("userAuthenticated");
   return (
     <nav className="block md:hidden">
-      <ul class="mini-lobby flex">
-        <li id="mini" class="main-nav">
-          <Link onclick="evolutionpop('DC','200215',true)" class="ui-link">
-            <img
-              class="icon-promote"
-              src="http://masterexch.vip/Content/images/mobile/minigame-promo/promot.gif"
-              alt="mini"
-            />
-          </Link>
-        </li>
+      <ul class="mini-lobby flex justify-evenly pb-0.5">
         <li
-          id="sports"
           class={`${navOption === 0 ? "select" : ""} text-center`}
           onClick={() => setNavOption(0)}
         >
-          <Link to="/sports" class="ui-link">
-            <img
-              class="icon-sports"
-              src="http://masterexch.vip/Content/images/transparent.gif"
-            />
+          <Link
+            to="/sports"
+            className="!flex !justify-center !items-center !flex-col"
+          >
+            <FaTrophy size={22} />
             Sports
           </Link>
         </li>
         <li
-          id="inPlay"
           class={`${navOption === 1 ? "select" : ""} text-center`}
           onClick={() => setNavOption(1)}
         >
-          <Link to="/inplay" class="ui-link">
-            <img
-              class="icon-inplay"
-              src="http://masterexch.vip/Content/images/transparent.gif"
-            />
+          <Link
+            to="/inplay"
+            className="!flex !justify-center !items-center !flex-col"
+          >
+            <PlayCircle />
             In-Play
           </Link>
         </li>
         <li
-          id="home"
           class={`${navOption === 2 ? "select" : ""} text-center`}
           onClick={() => setNavOption(2)}
         >
-          <Link to="/" class="ui-link">
-            <img
-              class="icon-home"
-              src="http://masterexch.vip/Content/images/transparent.gif"
-            />
+          <Link
+            to="/"
+            className="!flex !justify-center !items-center !flex-col"
+          >
+            <Home />
             Home
           </Link>
         </li>
         <li
-          id="multiMarket"
           class={`${navOption === 3 ? "select" : ""} text-center`}
           onClick={() => setNavOption(3)}
         >
-          <Link to="/multi" class="ui-link">
-            <img
-              class="icon-pin"
-              src="http://masterexch.vip/Content/images/transparent.gif"
-            />
+          <Link
+            to="/multi"
+            className="!flex !justify-center !items-center !flex-col"
+          >
+            <Grid />
             Multi
           </Link>
         </li>
         <li
-          id="account"
           class={`${navOption === 4 ? "select" : ""} text-center`}
           onClick={() => setNavOption(4)}
         >
           <Link
             to={`${userAuthenticated ? "/profile" : "/login"}`}
-            class="ui-link"
+            className="!flex !justify-center !items-center !flex-col"
           >
-            <img
-              class="icon-account"
-              src="http://masterexch.vip/Content/images/transparent.gif"
-            />
+            <User />
             Account
           </Link>
         </li>

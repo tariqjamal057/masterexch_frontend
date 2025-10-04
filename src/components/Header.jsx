@@ -9,11 +9,9 @@ const Header = () => {
     <header className="bg-[#1e1e1e] text-white flex justify-between items-center h-11 px-4 sticky top-0 z-40">
       <div className="flex items-center">
         <Link to="/" className="flex items-center">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="w-40 md:w-60 h-auto"
-          />
+          <h1 className="text-2xl md:text-3xl font-bold text-white">
+            Sports Hub
+          </h1>
         </Link>
       </div>
       <ul className="flex items-center space-x-4">

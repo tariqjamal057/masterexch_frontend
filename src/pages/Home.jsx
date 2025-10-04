@@ -19,7 +19,7 @@ const Home = () => {
             />
           );
         })}
-        {/* <ImagePreview classNames={} image={"http://masterexch.vip/Content/images/mobile/betbuzz365/banner_sports.0da533cd.png"} /> */}
+        {/* <ImagePreview classNames={} image={"https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"} /> */}
       </div>
     </div>
   );
